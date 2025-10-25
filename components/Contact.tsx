@@ -122,12 +122,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-green-400">WhatsApp</h3>
-                    <p className="text-gray-400">+57 3023814948</p>
+                    <p className="text-gray-400">+57 3023814958</p>
                   </div>
                 </div>
                 <Button
                   className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-black font-semibold px-5"
-                  onClick={() => window.open('https://wa.me/573023814948?text=Hola%20Sebasti%C3%A1n%2C%20vi%20tu%20portafolio%20y%20quiero%20hablar%20sobre%20un%20proyecto.', '_blank')}
+                  onClick={() => window.open('https://wa.me/573023814958?text=Hola%20Sebasti%C3%A1n%2C%20vi%20tu%20portafolio%20y%20quiero%20hablar%20sobre%20un%20proyecto.', '_blank')}
                 >
                   Chatear
                 </Button>

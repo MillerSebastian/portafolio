@@ -11,15 +11,28 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Faltan campos requeridos' }, { status: 400 });
     }
 
+    const { SMTP_HOST, SMTP_PORT, SMTP_SECURE, SMTP_USER, SMTP_PASS } = process.env;
+    if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS) {
+      console.error('SMTP env missing', { SMTP_HOST: !!SMTP_HOST, SMTP_PORT: !!SMTP_PORT, SMTP_USER: !!SMTP_USER, SMTP_PASS: !!SMTP_PASS });
+      return NextResponse.json({ error: 'Configuración SMTP incompleta en el servidor' }, { status: 500 });
+    }
+
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT || 587),
-      secure: process.env.SMTP_SECURE === 'true',
+      host: SMTP_HOST,
+      port: Number(SMTP_PORT || 587),
+      secure: SMTP_SECURE === 'true',
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: SMTP_USER,
+        pass: SMTP_PASS,
       },
     });
+
+    try {
+      await transporter.verify();
+    } catch (e) {
+      console.error('SMTP verify failed:', e);
+      return NextResponse.json({ error: 'No se pudo conectar al servidor SMTP' }, { status: 500 });
+    }
 
     const to = 'sebastianrodelog@gmail.com';
     const from = process.env.FROM_EMAIL || process.env.SMTP_USER || 'no-reply@example.com';
