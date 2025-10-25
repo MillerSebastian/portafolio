@@ -54,6 +54,7 @@ export default function Skills() {
     { name: 'npm', iconUrl: 'https://cdn.simpleicons.org/npm/CB3837' },
     { name: 'Terminal', iconUrl: 'https://cdn.simpleicons.org/gnubash/4EAA25' },
     { name: 'macOS', iconUrl: 'https://cdn.simpleicons.org/apple/FFFFFF' },
+    { name: 'n8n', iconUrl: 'https://cdn.simpleicons.org/n8n' },
     { name: 'Excalidraw', iconUrl: 'https://cdn.simpleicons.org/excalidraw/6965DB' },
     { name: 'Figma', iconUrl: 'https://cdn.simpleicons.org/figma/F24E1E' },
   ];

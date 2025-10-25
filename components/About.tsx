@@ -70,6 +70,28 @@ export default function About() {
               y entregando resultados excepcionales a nuestros clientes.
             </p>
 
+            {/* Stack Principal */}
+            <div className="mt-8">
+              <h3 className="text-2xl font-bold text-green-400 mb-4">Stack Principal</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                {[ 
+                  { name: 'Vue', iconUrl: 'https://cdn.simpleicons.org/vuedotjs/4FC08D' },
+                  { name: 'TypeScript', iconUrl: 'https://cdn.simpleicons.org/typescript/3178C6' },
+                  { name: 'Firebase', iconUrl: 'https://cdn.simpleicons.org/firebase/FFCA28' },
+                  { name: 'Tailwind', iconUrl: 'https://cdn.simpleicons.org/tailwindcss/38BDF8' },
+                ].map((s, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center justify-center gap-2 rounded-2xl bg-gray-800/50 border border-green-500/20 text-gray-200 py-4 px-4 hover:border-green-500/60 hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] transition-all duration-300"
+                    title={s.name}
+                  >
+                    <img src={s.iconUrl} alt={s.name} className="w-5 h-5" />
+                    <span className="font-medium">{s.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 gap-4 pt-6">
               <Card className="bg-gray-800/50 border-green-500/30 p-6 hover:border-green-500/60 transition-all duration-300 hover:scale-105">
                 <div className="flex items-start gap-4">

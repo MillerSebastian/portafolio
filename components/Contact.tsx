@@ -5,7 +5,7 @@ import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, MessageCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 export default function Contact() {
@@ -38,20 +38,28 @@ export default function Contact() {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error('Request failed');
 
-    toast({
-      title: '¡Mensaje enviado!',
-      description: 'Gracias por contactarme. Te responderé pronto.',
-    });
+      toast({
+        title: '¡Mensaje enviado!',
+        description: 'Gracias por contactarme. Te responderé pronto.',
+      });
 
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    });
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      toast({
+        title: 'Error al enviar',
+        description: 'No se pudo enviar el mensaje. Intenta nuevamente más tarde.',
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -89,7 +97,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-green-400">Email</h3>
-                  <p className="text-gray-400">contact@sebastianrodelo.com</p>
+                  <p className="text-gray-400">sebastianrodelog@gmail.com</p>
                 </div>
               </div>
             </Card>
@@ -101,8 +109,28 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-green-400">Teléfono</h3>
-                  <p className="text-gray-400">+57 123 456 7890</p>
+                  <p className="text-gray-400">+57 3169252560</p>
                 </div>
+              </div>
+            </Card>
+
+            <Card className="bg-gradient-to-br from-gray-800 to-gray-900 border-green-500/30 p-6 hover:border-green-500/60 transition-all duration-300">
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="p-4 bg-green-500/10 rounded-lg">
+                    <MessageCircle className="h-6 w-6 text-green-500" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-green-400">WhatsApp</h3>
+                    <p className="text-gray-400">+57 3023814948</p>
+                  </div>
+                </div>
+                <Button
+                  className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-black font-semibold px-5"
+                  onClick={() => window.open('https://wa.me/573023814948?text=Hola%20Sebasti%C3%A1n%2C%20vi%20tu%20portafolio%20y%20quiero%20hablar%20sobre%20un%20proyecto.', '_blank')}
+                >
+                  Chatear
+                </Button>
               </div>
             </Card>
 

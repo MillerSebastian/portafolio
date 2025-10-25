@@ -27,7 +27,7 @@ export default function Hero() {
   }, []);
 
   const handleDownloadCV = () => {
-    window.open('/cv-sebastian-rodelo.pdf', '_blank');
+    window.open('/Sebastian Rodelo.docx.pdf', '_blank');
   };
 
   return (
@@ -101,7 +101,7 @@ export default function Hero() {
               <Github className="h-8 w-8" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/sebastian-rodelo-139696266/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-green-500 transition-all duration-300 hover:scale-110"
@@ -109,18 +109,12 @@ export default function Hero() {
               <Linkedin className="h-8 w-8" />
             </a>
             <a
-              href="mailto:contact@sebastianrodelo.com"
+              href="mailto:sebastianrodelog@gmail.com"
               className="text-gray-400 hover:text-green-500 transition-all duration-300 hover:scale-110"
             >
               <Mail className="h-8 w-8" />
             </a>
           </div>
-
-          {/* <div className="absolute bottom-10 animate-bounce">
-            <div className="w-6 h-10 border-2 border-green-500 rounded-full flex items-start justify-center p-2">
-              <div className="w-1 h-3 bg-green-500 rounded-full animate-pulse" />
-            </div>
-          </div> */}
         </div>
       </div>
     </section>

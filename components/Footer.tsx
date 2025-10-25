@@ -79,7 +79,7 @@ export default function Footer() {
                 <Github className="h-6 w-6" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/sebastian-rodelo-139696266/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-gray-800 rounded-lg text-gray-400 hover:text-green-500 hover:bg-gray-700 transition-all duration-300 hover:scale-110"
@@ -87,7 +87,7 @@ export default function Footer() {
                 <Linkedin className="h-6 w-6" />
               </a>
               <a
-                href="mailto:contact@sebastianrodelo.com"
+                href="mailto:sebastianrodelog@gmail.com"
                 className="p-3 bg-gray-800 rounded-lg text-gray-400 hover:text-green-500 hover:bg-gray-700 transition-all duration-300 hover:scale-110"
               >
                 <Mail className="h-6 w-6" />
