@@ -40,7 +40,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg blur-2xl opacity-20" />
               <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-lg border-2 border-green-500/30 hover:border-green-500/60 transition-all duration-300">
                 <img
-                  src="https://github.com/MillerSebastian.png"
+                  src="/avatar/sebastian.png"
                   alt="Sebastian Rodelo"
                   className="w-full h-auto rounded-lg shadow-2xl"
                 />

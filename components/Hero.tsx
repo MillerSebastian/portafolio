@@ -93,14 +93,6 @@ export default function Hero() {
 
           <div className="flex gap-6 pt-8">
             <a
-              href="https://github.com/MillerSebastian"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-green-500 transition-all duration-300 hover:scale-110"
-            >
-              <Github className="h-8 w-8" />
-            </a>
-            <a
               href="https://www.linkedin.com/in/sebastian-rodelo-139696266/"
               target="_blank"
               rel="noopener noreferrer"
